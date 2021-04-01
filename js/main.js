@@ -147,17 +147,3 @@
 
 
 }());
-
-function getParamterByName(name)
-{
-	url = window.location.href;
-	name = name.replace(/[\[\]]/g, '\\$&');
-	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(url);
-	
-	if(!results) return 'null';
-	if(!results[2]) return 'empty';
-	return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-var url = "https://www.akdjbcc.co.kr/html/guide/guide_06.asp?nid=" + getParamterByName('id');
-
-fetch(url);
